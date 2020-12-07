@@ -1,0 +1,113 @@
+<!--<div class="card-container">-->
+<!--  <mat-card class="info-card">-->
+<!--    <span class="material-icons">-->
+<!--        account_box-->
+<!--      </span>-->
+<!--    <h2>Mieszko Pierwszy</h2>-->
+<!--  </mat-card>-->
+<!--  <mat-card class="info-card">-->
+<!--    <span class="material-icons">-->
+<!--        account_box-->
+<!--      </span>-->
+<!--    <h2>Bolesław Chrobry</h2>-->
+<!--  </mat-card>-->
+<!--  <mat-card class="info-card">-->
+<!--    <span class="material-icons">-->
+<!--        account_box-->
+<!--      </span>-->
+<!--    <h2>Kazimierz Wielki</h2>-->
+<!--  </mat-card>-->
+<!--</div>-->
+<!--<div class="circle-shadow-blend" style="opacity: 0.4">-->
+<!--</div>-->
+
+<div class="content-container">
+  <mat-card class="vertical-card vertical-card-md">
+    <mat-card class="row-function-card-container" style="width: 80%">
+<!--      <span class="material-icons">-->
+<!--          add-->
+<!--        </span>-->
+      <p>Właściciel</p>
+    </mat-card>
+    <mat-spinner *ngIf="usersLoading" style="margin-bottom: 15px"></mat-spinner>
+    <mat-card class="row-card-container" *ngFor="let user of ownersList"
+              (click)="navigateTo('/apartment/user-panel/', user.id)">
+      <mat-card class="photo-card-round"></mat-card>
+      <div class="content-title-container">
+        <h2>{{user.firstName}} {{user.lastName}}</h2>
+        <p class="blend-description">{{user.phoneNumber}}</p>
+      </div>
+    </mat-card>
+    <mat-card class="row-function-card-container" style="width: 80%">
+      <!--      <span class="material-icons">-->
+      <!--          add-->
+      <!--        </span>-->
+      <p>Wynajmujący</p>
+    </mat-card>
+    <mat-spinner *ngIf="usersLoading" style="margin-bottom: 15px"></mat-spinner>
+    <mat-card class="row-card-container" *ngFor="let user of userList"
+              (click)="navigateTo('/apartment/user-panel/', user.id)">
+      <mat-card class="photo-card-round"></mat-card>
+      <div class="content-title-container">
+        <h2>{{user.firstName}} {{user.lastName}}</h2>
+        <p class="blend-description">{{user.phoneNumber}}</p>
+      </div>
+    </mat-card>
+    <mat-card class="row-function-card-container" (click)="addNewUser()" *ngIf="appMode === 0">
+      <span class="material-icons">
+          add
+        </span>
+      <p>Dodaj lokatora</p>
+    </mat-card>
+  </mat-card>
+  <mat-card class="vertical-card vertical-card-lg">
+    <div class="vertical-list-wrapper">
+      <mat-card class="vertical-list-header">
+        <p>Aktualności</p>
+      </mat-card>
+      <mat-card class="vertical-list-content">
+        <div class="vertical-list-content-item" *ngFor="let item of newsList">
+          <p>{{item.label}}</p>
+        </div>
+        <div class="vertical-list-content-item" *ngIf="newsList.length === 0">
+          <p>Brak aktualności</p>
+        </div>
+      </mat-card>
+    </div>
+    <div class="vertical-list-wrapper">
+      <mat-card class="vertical-list-header">
+        <p>Tablica</p>
+      </mat-card>
+      <mat-card class="vertical-list-content">
+        <div class="vertical-list-content-item" *ngFor="let item of messageList">
+          <p>{{item.label}}</p>
+        </div>
+        <div class="vertical-list-content-item" *ngIf="messageList.length === 0">
+          <p>Brak wiadomości</p>
+        </div>
+      </mat-card>
+    </div>
+    <div class="vertical-list-wrapper">
+      <mat-card class="vertical-list-header">
+        <p>Płatności</p>
+      </mat-card>
+      <mat-card class="vertical-list-content">
+        <div class="vertical-list-content-item" *ngFor="let item of paymentList">
+          <p>{{item.label}}</p>
+        </div>
+        <div class="vertical-list-content-item" *ngIf="messageList.length === 0">
+          <p>Brak płatności</p>
+        </div>
+      </mat-card>
+    </div>
+  </mat-card>
+  <mat-card class="vertical-card vertical-card-md">
+    <mat-card class="row-card-container" *ngFor="let option of optionList" (click)="selectOption(option.type)">
+      <span class="material-icons">{{option.icon}}</span>
+      <div class="content-title-container">
+        <h2>{{option.label}}</h2>
+        <p class="blend-description">{{option.description}}</p>
+      </div>
+    </mat-card>
+  </mat-card>
+</div>

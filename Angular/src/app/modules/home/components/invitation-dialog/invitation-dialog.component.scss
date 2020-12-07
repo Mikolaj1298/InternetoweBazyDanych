@@ -1,0 +1,13 @@
+@import "../../../../../styles/colors";
+@import "src/app/modules/home/pages/home-main/home-main.component";
+@import "src/app/modules/apartment/components/add-user-dialog/add-user-dialog.component";
+
+.red-button {
+  background-color: $color-red;
+  width: 120px !important;
+}
+
+.yellow-button {
+  background-color: goldenrod;
+  width: 100px !important;
+}

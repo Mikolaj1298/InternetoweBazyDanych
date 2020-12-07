@@ -1,0 +1,115 @@
+@import "../../../../../styles/colors";
+
+mat-card {
+  height: 45vh;
+  width: 25vw;
+  min-width: 450px;
+  opacity: 0.98;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(91, 91, 91);
+  color: $color-white;
+  font-family: "Montserrat Light", serif;
+  border-radius: 10px;
+}
+
+.address-mode-container {
+  height: 65vh;
+}
+
+.circle-shadow-blend {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 50vw;
+  height: 60vh;
+  border: solid 1px #555;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+  -o-box-shadow: 10px -10px rgba(0, 0, 0, 0.5);
+  border-radius: 20%;
+  z-index: -1;
+
+  -webkit-filter: blur(50px);
+  -moz-filter: blur(50px);
+  -o-filter: blur(50px);
+  -ms-filter: blur(50px);
+  filter: blur(50px);
+}
+
+.form-container {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header-wrapper {
+  //height: 20%;
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+}
+
+.authentication-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  //overflow-y: auto;
+
+  mat-label {
+    color: $color-white;
+  }
+
+  button {
+    width: 50%;
+    height: 45px;
+    margin: 25px 0;
+    background-color: $color-red;
+    font-size: 22px;
+  }
+
+  mat-form-field {
+    width: 100%;
+    font-size: 17px;
+  }
+}
+
+.footer-container {
+  display: flex;
+
+  :first-child {
+    margin-right: 5px;
+  }
+}
+
+.address-wrapper {
+  display: flex;
+  align-items: center;
+
+  :first-child {
+    margin-right: 20px;
+  }
+
+  p {
+    margin: 0 20px;
+  }
+  button {
+    width: 160px;
+    background-color: goldenrod;
+  }
+}
+
+.red-button {
+  background-color: $color-red !important;
+}

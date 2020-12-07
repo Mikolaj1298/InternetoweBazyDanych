@@ -1,0 +1,21 @@
+@import "../../../styles/colors";
+
+.theme-container {
+  height: calc(100% - 62px);
+  background-image: url("../../../assets/images/brick-wall.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1);
+}
+
+.blend-wrapper {
+  height: calc(100vh - 62px);
+
+  background-color: $color-blend;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

@@ -1,0 +1,61 @@
+<div class="card-container">
+  <mat-card>
+    <div class="header-wrapper">
+      <p>Zarejestruj się</p>
+    </div>
+    <div class="form-container">
+      <form class="authentication-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field *ngIf="!extendedMode">
+          <mat-label>Nazwa użytkownika</mat-label>
+          <input matInput formControlName="username">
+        </mat-form-field>
+        <mat-form-field *ngIf="!extendedMode">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+        <mat-form-field *ngIf="!extendedMode">
+          <mat-label>Hasło</mat-label>
+          <input matInput autocomplete="none" type="password" formControlName="password">
+        </mat-form-field>
+        <mat-form-field *ngIf="!extendedMode">
+          <mat-label>Powtórz hasło</mat-label>
+          <input matInput autocomplete="none" type="password" formControlName="passwordValidate">
+        </mat-form-field>
+        <mat-button-toggle-group (change)="changeRegistrationType()" *ngIf="!extendedMode">
+          <mat-button-toggle [checked]="true">Wynajmujący</mat-button-toggle>
+          <mat-button-toggle [checked]="false">Właściciel mieszkania</mat-button-toggle>
+        </mat-button-toggle-group>
+        <button mat-raised-button color="accent" type="button" *ngIf="!extendedMode"
+                (click)="changePage()">Dalej
+        </button>
+
+        <mat-form-field *ngIf="extendedMode">
+          <mat-label>Imię</mat-label>
+          <input matInput formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field *ngIf="extendedMode">
+          <mat-label>Nazwisko</mat-label>
+          <input matInput formControlName="lastName">
+        </mat-form-field>
+        <mat-form-field *ngIf="extendedMode">
+          <mat-label>Numer telefonu</mat-label>
+          <input matInput formControlName="phoneNumber">
+        </mat-form-field>
+        <button mat-raised-button color="accent" type="submit" *ngIf="extendedMode && !loading">Dalej</button>
+        <mat-spinner *ngIf="loading"></mat-spinner>
+
+      </form>
+      <div class="footer-splitter">
+        <div class="line"></div>
+        <p>lub</p>
+        <div class="line"></div>
+      </div>
+      <div class="footer-container">
+        <p>Masz już konto?</p>
+        <p style="font-weight: bolder; cursor: pointer" (click)="navigate('/landing-page/login')">Zaloguj się!</p>
+      </div>
+    </div>
+  </mat-card>
+</div>
+<div class="circle-shadow-blend">
+</div>

@@ -1,0 +1,51 @@
+<div class="content-container">
+  <mat-card class="vertical-card vertical-card-md">
+    <mat-spinner *ngIf="userLoading" style="margin-bottom: 15px"></mat-spinner>
+    <!--    <mat-card class="row-card-container" *ngFor="let user of userList">-->
+    <mat-card class="photo-card-round"></mat-card>
+    <!--    <h2>Andrzej Testowy</h2>-->
+    <!--      <div class="content-title-container">-->
+    <h2 *ngIf="actualUser" class="header-title">{{actualUser.firstName}} {{actualUser.lastName}}</h2>
+    <h2 *ngIf="actualUser" class="header-credentials">Email: {{actualUser.email}}</h2>
+    <h2 *ngIf="actualUser" class="header-credentials">Numer telefonu: {{actualUser.phoneNumber}}</h2>
+    <h2 *ngIf="actualUser" class="header-credentials">Data rejestracji: {{actualUser.registrationDate}}</h2>
+    <h2 *ngIf="actualUser && actualUser.owner_meta" class="header-credentials">Numer
+      konta: {{actualUser.owner_meta.accountNumber}}</h2>
+    <!--        <p class="blend-description">{{user.phoneNumber}}</p>-->
+    <!--      </div>-->
+    <!--    </mat-card>-->
+
+  </mat-card>
+  <mat-card class="vertical-card vertical-card-lg" *ngIf="enableChat">
+    <div class="vertical-list-wrapper">
+      <mat-card class="vertical-list-header-a">
+        <p>Wiadomości</p>
+      </mat-card>
+      <mat-card class="vertical-list-content">
+        <mat-spinner *ngIf="messagesLoading" style="margin-top: 40px; margin-left: 45%"></mat-spinner>
+        <div class="scroll-chat-wrapper" #scrollMe >
+          <div class="message-item" *ngFor="let item of messageList"
+               [ngClass]="{'vertical-list-content-item-my': item.myMessage,
+         'vertical-list-content-item-not-my': !item.myMessage}">
+            <mat-card>
+              <mat-card class="photo-card-round photo-mini" *ngIf="!item.myMessage"></mat-card>
+              <p>{{item.content}}</p>
+            </mat-card>
+          </div>
+<!--          <div class="vertical-list-content-item" *ngIf="messageList.length === 0">-->
+<!--            <p>Brak wiadomości</p>-->
+<!--          </div>-->
+        </div>
+      </mat-card>
+      <div class="search-input-wrapper">
+        <mat-form-field class="search-input">
+          <mat-label>Wyślij wiadomość</mat-label>
+          <button mat-button matSuffix mat-icon-button>
+            <span class="material-icons" (click)="sendMessage()">send</span>
+          </button>
+          <input matInput autocomplete="off" [(ngModel)]="messageContent" (keyup.enter)="sendMessage()">
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-card>
+</div>

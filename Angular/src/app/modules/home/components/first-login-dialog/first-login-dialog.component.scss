@@ -1,0 +1,57 @@
+@import "../../../../../styles/colors";
+
+.card-container {
+  //height: 30vh;
+  //width: 30vw;
+}
+
+.info-card {
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+  background-color: $color-white;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 17px;
+  }
+
+  button {
+    background-color: $color-almost-black;
+    color: $color-white;
+    font-size: 20px;
+    padding: 5px 20px;
+    margin-top: 17px;
+  }
+}
+
+.circle-shadow-blend {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 40vw;
+  height: 50vh;
+  border: solid 1px #555;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 10px -10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 10px -10px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 10px -10px rgba(0, 0, 0, 0.5);
+  border-radius: 20%;
+  z-index: -1;
+
+  -webkit-filter: blur(50px);
+  -moz-filter: blur(50px);
+  -o-filter: blur(50px);
+  -ms-filter: blur(50px);
+  filter: blur(50px);
+}

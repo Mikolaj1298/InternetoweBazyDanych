@@ -1,0 +1,125 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./styles/colors";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-form-field-underline {
+  background-color: $color-white !important;
+}
+
+/* Change label color on focused */
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  background-color: $color-white !important;
+}
+
+/* underline border color on focused */
+.mat-focused .mat-form-field-underline .mat-form-field-ripple {
+  background-color: #434343 !important;
+}
+
+.mat-input-element {
+  caret-color: $color-white !important;
+}
+
+.mat-spinner circle {
+  stroke: goldenrod !important;
+  stroke-width: 7% !important;
+}
+
+.transparent-dialog .mat-dialog-container {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+  overflow: hidden;
+  padding: 0;
+}
+
+.search-input {
+  .mat-form-field-label, .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center !important;
+  }
+  .mat-form-field-wrapper {
+    height: 40px !important;
+
+    .mat-form-field-flex {
+      .mat-form-field-infix {
+        border-top-width: 6px !important;
+      }
+    }
+  }
+}
+
+.mat-form-field .mat-form-field-label {
+  margin-left: 9px;
+  color: black !important;
+  font-size: 15px;
+}
+
+
+
+//
+//.mat-focused {
+//  color: black !important;
+//}
+
+//.loader .mat-dialog-container {
+//  background: none !important;
+//  box-shadow: none !important;
+//}
+//
+//.transparent .mat-dialog-container {
+//  background-color: rgba(0, 0, 0, 0);
+//  box-shadow: none;
+//  overflow: hidden;
+//}
+
+
+/* Handle on hover */
+//::-webkit-scrollbar-thumb:hover {
+//  background: #555;
+//}
+
+//.transparent {
+//  .cdk-overlay-dark-backdrop {
+//    background-color: rgba(0, 0, 0, 0.5);
+//  }
+//
+//  .mat-dialog-container {
+//    box-shadow: none;
+//    background-color: transparent;
+//    //background-color: rgba(0, 0, 0, 0.3);
+//    width: 100%;
+//    position: relative;
+//
+//    /* width */
+//    ::-webkit-scrollbar {
+//      width: 2px;
+//    }
+//
+//    /* Track */
+//    ::-webkit-scrollbar-track {
+//      background: #f1f1f1;
+//    }
+//
+//    /* Handle */
+//    ::-webkit-scrollbar-thumb {
+//      background: #888;
+//    }
+//
+//    /* Handle on hover */
+//    ::-webkit-scrollbar-thumb:hover {
+//      background: #555;
+//    }
+//  }
+//
+//
+//}
+

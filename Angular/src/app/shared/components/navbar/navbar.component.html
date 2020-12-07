@@ -1,0 +1,37 @@
+<mat-card id="navbar-card">
+  <div class="header-container">
+    <div class="icon-wrapper" (click)="navigate(lastRoot)">
+      <span class="material-icons">
+        undo
+      </span>
+    </div>
+    <h1 id="logo-header" (click)="navigate('/landing-page/main')">Kamienicznik</h1>
+  </div>
+  <div class="function-container" >
+    <p class="username-title" *ngIf="this.loggedIn">Witaj, {{username}}!</p>
+    <div class="icon-wrapper" *ngIf="this.loggedIn" (click)="navigate('/home/main')">
+      <span class="material-icons">
+        home
+      </span>
+    </div>
+    <div class="icon-wrapper" (click)="testApi()">
+      <span class="material-icons">
+        notifications
+      </span>
+    </div>
+    <div class="icon-wrapper" *ngIf="this.loggedIn">
+      <span class="material-icons">
+        settings
+      </span>
+    </div>
+    <div class="button-wrapper" *ngIf="!this.loggedIn">
+      <button mat-button color="primary" (click)="navigate('/landing-page/login')">Logowanie</button>
+    </div>
+    <div class="button-wrapper" *ngIf="!this.loggedIn">
+      <button mat-button color="primary" (click)="navigate('/landing-page/register')">Rejestracja</button>
+    </div>
+    <div class="button-wrapper" *ngIf="this.loggedIn">
+      <button mat-button color="primary" (click)="logOut()">Wyloguj</button>
+    </div>
+  </div>
+</mat-card>

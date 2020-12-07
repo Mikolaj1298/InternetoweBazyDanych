@@ -1,0 +1,145 @@
+@import "../../../../../styles/colors";
+
+.content-container {
+  height: calc(100vh - 62px);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+  font-family: "Montserrat ExtraLight", serif;
+}
+
+.navigation {
+  max-height: 10%;
+}
+
+.navigation-wrapper {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation-backward {
+  cursor: pointer;
+  max-width: 200px;
+  font-size: 20px;
+  font-family: "Montserrat Light", serif !important;
+
+  p {
+    margin: 0;
+    opacity: 0.8;
+  }
+
+  span {
+    font-size: 70px;
+    opacity: 0.5;
+  }
+}
+
+.navigation-backward:hover {
+  opacity: 0.4;
+}
+
+.board-wrapper {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slogan {
+  width: 40%;
+  height: 50%;
+  margin-right: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  //font-size: 60px;
+  text-shadow: 2px 2px 7px #000000;
+  line-height: 1.6;
+
+  .header-container {
+    height: 30%;
+    font-size: 50px;
+    display: flex;
+    justify-content: flex-start;
+
+    .header-wrapper {
+      max-height: 80%;
+      margin-left: 40px;
+      border-bottom: 3px solid rgba(255, 255, 255, 0.6);
+      padding: 0 10px;
+
+      p {
+        margin: 0;
+      }
+
+      //max-width: 400px;
+    }
+  }
+
+  .slogan-content-container {
+    //height: 70%;
+    font-size: 27px;
+  }
+}
+
+.image-wrapper {
+  width: 50%;
+  height: 70%;
+  background-image: url("../../../../../assets/images/pexels-david-gonzales-2640604.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1);
+}
+
+.circle-shadow-blend {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 80vw;
+  height: 60vh;
+  border: solid 1px #555;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+  -o-box-shadow: 10px -10px rgba(0, 0, 0, 0.5);
+  border-radius: 20%;
+  z-index: -1;
+
+  -webkit-filter: blur(50px);
+  -moz-filter: blur(50px);
+  -o-filter: blur(50px);
+  -ms-filter: blur(50px);
+  filter: blur(50px);
+}
+
+.navigation-forward-wrapper {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: flex-end;
+
+  p {
+    font-size: 38px;
+    margin: 0;
+    opacity: 0.8;
+    line-height: 1.4;
+  }
+
+  span {
+    margin-top: 20px;
+    font-size: 70px;
+    opacity: 0.5;
+  }
+}

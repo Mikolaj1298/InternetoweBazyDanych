@@ -1,0 +1,76 @@
+<div class="content-container">
+  <mat-card class="vertical-card vertical-card-md">
+    <mat-card class="row-card-container" *ngFor="let apartment of apartmentList"
+              (click)="navigateTo('/apartment/apartment-dashboard/', apartment.id)">
+      <mat-card class="photo-card-square"></mat-card>
+      <div class="content-title-container">
+        <h2 *ngIf="apartment.address.houseNumberExt !== ''">ul. {{apartment.address.street}} {{apartment.address.houseNumber}}
+          /{{apartment.address.houseNumberExt}}</h2>
+        <h2 *ngIf="apartment.address.houseNumberExt === ''">ul. {{apartment.address.street}} {{apartment.address.houseNumber}}</h2>
+        <p class="extended-title">Wrocław</p>
+        <p class="blend-description">Brak aktualnych<br>powiadomień</p>
+      </div>
+    </mat-card>
+    <mat-spinner *ngIf="apartmentsLoading" style="margin-bottom: 15px"></mat-spinner>
+    <mat-card class="row-function-card-container"  *ngIf="appMode === 0">
+      <span class="material-icons">
+          add
+        </span>
+      <p (click)="navigateTo('/home/add-apartment')">Dodaj mieszkanie</p>
+    </mat-card>
+  </mat-card>
+  <mat-card class="vertical-card vertical-card-md">
+    <mat-card class="row-card-container" *ngFor="let option of optionList" (click)="selectOption(option.type)">
+      <span class="material-icons">{{option.icon}}</span>
+      <div class="content-title-container">
+        <h2>{{option.label}}</h2>
+        <p class="blend-description">{{option.description}}</p>
+      </div>
+    </mat-card>
+  </mat-card>
+  <mat-card class="vertical-card vertical-card-lg">
+    <div class="vertical-list-wrapper">
+      <mat-card class="vertical-list-header">
+        <p>Aktualności</p>
+      </mat-card>
+      <mat-card class="vertical-list-content">
+        <div class="vertical-list-content-item" *ngFor="let item of newsList" (click)="openNotification(item)">
+          <p>{{item.label}}</p>
+        </div>
+        <div class="vertical-list-content-item" *ngIf="newsList.length === 0">
+          <p>Brak aktualności</p>
+        </div>
+      </mat-card>
+    </div>
+    <div class="vertical-list-wrapper">
+      <mat-card class="vertical-list-header">
+        <p>Wiadomości</p>
+      </mat-card>
+      <mat-card class="vertical-list-content">
+        <div class="vertical-list-content-item" *ngFor="let item of messageList">
+          <p>{{item.label}}</p>
+        </div>
+        <div class="vertical-list-content-item" *ngIf="messageList.length === 0">
+          <p>Brak wiadomości</p>
+        </div>
+      </mat-card>
+    </div>
+  </mat-card>
+  <!--  <mat-card class="info-card" *ngFor="let address of addressList"-->
+  <!--            (click)="navigateTo('/apartment/apartment-dashboard/4')">-->
+  <!--    <h2 *ngIf="address.houseNumberExt !== ''">{{address.street}} {{address.houseNumber}}/{{address.houseNumberExt}}</h2>-->
+  <!--    <h2 *ngIf="address.houseNumberExt === ''">{{address.street}} {{address.houseNumber}}</h2>-->
+  <!--    <span class="material-icons" *ngIf="address.street !== 'Dodaj mieszkanie'">-->
+  <!--        home-->
+  <!--      </span>-->
+  <!--  </mat-card>-->
+  <!--  <mat-card class="info-card" *ngIf="isOwnerMode" (click)="navigateTo('/home/add-apartment')">-->
+  <!--    <h2>Dodaj mieszkanie</h2>-->
+  <!--    <span class="material-icons">-->
+  <!--        add-->
+  <!--      </span>-->
+  <!--  </mat-card>-->
+
+</div>
+<div class="circle-shadow-blend" style="opacity: 0.4">
+</div>

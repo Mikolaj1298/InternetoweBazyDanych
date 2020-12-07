@@ -1,0 +1,65 @@
+<mat-card [ngClass]="{'address-mode-container': addressMode}">
+  <div class="form-container" *ngIf="!addressMode">
+    <div class="header-wrapper">
+      <p>Dodaj mieszkanie</p>
+    </div>
+    <form class="authentication-form" [formGroup]="form" (submit)="onApartmentSubmit()">
+      <mat-form-field>
+        <mat-label>Maksymalna liczba lokatorów</mat-label>
+        <input matInput formControlName="maxLocatorsNumber">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Liczba pokoi</mat-label>
+        <input matInput autocomplete="none" formControlName="roomsNumber">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Metraż</mat-label>
+        <input matInput autocomplete="none" formControlName="livingArea">
+      </mat-form-field>
+      <p *ngIf="addressAdded" style="font-size: 20px"></p>
+      <div class="address-wrapper">
+        <button mat-button (click)="activateAddressMode()" *ngIf="!addressAdded">Dodaj adres</button>
+        <button mat-button (click)="activateAddressMode()" *ngIf="addressAdded">Edytuj adres</button>
+        <mat-spinner *ngIf="apartmentLoading" style="margin: 10px"></mat-spinner>
+        <button mat-button *ngIf="addressAdded && !apartmentLoading" type="submit" class="red-button">Dodaj</button>
+      </div>
+    </form>
+  </div>
+  <div class="form-container" *ngIf="addressMode">
+    <div class="header-wrapper">
+      <p>Dodaj adres</p>
+    </div>
+    <form class="authentication-form" [formGroup]="addressForm" (submit)="deactivateAddressMode()">
+      <mat-form-field>
+        <mat-label>Kraj</mat-label>
+        <input matInput formControlName="country">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Województwo</mat-label>
+        <input matInput autocomplete="none" formControlName="district">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Miasto</mat-label>
+        <input matInput autocomplete="none" formControlName="city">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Ulica*</mat-label>
+        <input matInput autocomplete="none" formControlName="street">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Numer domu*</mat-label>
+        <input matInput autocomplete="none" formControlName="houseNumber">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Numer mieszkania</mat-label>
+        <input matInput autocomplete="none" formControlName="houseNumberExt">
+      </mat-form-field>
+      <div class="address-wrapper">
+        <button mat-button type="submit">Dodaj</button>
+      </div>
+      <!--      <button mat-button >Dodaj</button>-->
+    </form>
+  </div>
+</mat-card>
+<div class="circle-shadow-blend">
+</div>

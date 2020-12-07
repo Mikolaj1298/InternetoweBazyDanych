@@ -1,0 +1,19 @@
+<div class="cont">
+  <mat-card>
+    <div>Powiadomienie</div>
+    <span class="material-icons" [mat-dialog-close]="true" style="cursor: pointer">clear</span>
+  </mat-card>
+  <div class="body">
+    <div class="search-input-wrapper">
+      <p>{{label}}</p>
+    </div>
+    <div class="options-bar">
+      <p  style="font-size: 15px; font-weight: bold">Czy chcesz zaakceptować to zaproszenie?</p>
+      <div class="buttons-wrapper">
+        <mat-spinner *ngIf="acceptLoading"></mat-spinner>
+        <button *ngIf="!acceptLoading" mat-raised-button class="red-button submit-button" (click)="acceptInvitation(true)">Akceptuj</button>
+        <button mat-raised-button class="yellow-button submit-button" (click)="acceptInvitation(false)">Odrzuć</button>
+      </div>
+    </div>
+  </div>
+</div>

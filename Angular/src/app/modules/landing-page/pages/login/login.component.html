@@ -1,0 +1,28 @@
+<div class="card-container">
+  <mat-card>
+    <div class="form-container">
+      <div class="header-wrapper">
+        <p>Zaloguj się</p>
+      </div>
+      <form class="authentication-form" [formGroup]="form" (submit)="onSubmit()">
+        <mat-form-field>
+          <mat-label>Nazwa użytkownika</mat-label>
+          <input matInput formControlName="username">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Hasło</mat-label>
+          <input matInput autocomplete="none" type="password" formControlName="password">
+        </mat-form-field>
+        <button mat-raised-button color="accent" *ngIf="!loading">Dalej</button>
+        <mat-spinner *ngIf="loading"></mat-spinner>
+      </form>
+      <div class="footer-container">
+        <p>Nie masz jeszcze konta?</p>
+        <p style="font-weight: bolder; cursor: pointer" (click)="navigate('/landing-page/register')">Zarejestruj
+          się!</p>
+      </div>
+    </div>
+  </mat-card>
+</div>
+<div class="circle-shadow-blend">
+</div>

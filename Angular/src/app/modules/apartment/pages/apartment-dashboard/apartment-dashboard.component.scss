@@ -1,0 +1,27 @@
+@import "../../../../../styles/colors";
+@import "../../../home/pages/home-main/home-main.component";
+
+.content-title-container {
+  h2 {
+    margin-bottom: 10px;
+  }
+}
+
+.photo-card-round {
+  height: 80px;
+  width: 80px;
+  border-radius: 200px;
+  background-image: url("../../../../../assets/images/pexels-pixabay-workshop.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1);
+}
+
+.vertical-card-lg {
+  width: 41%;
+  div {
+    height: 33%;
+    width: 100%;
+  }
+}

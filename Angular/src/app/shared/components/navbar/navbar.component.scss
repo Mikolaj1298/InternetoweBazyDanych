@@ -1,0 +1,73 @@
+@import "../../../../styles/colors";
+
+#navbar-card {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 7px;
+  height: 48px;
+  background-color: $color-light-grey;
+}
+
+.header-container {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+
+  :first-child {
+    margin-top: 2px;
+    margin-right: 8px;
+  }
+}
+
+.function-container {
+  display: flex;
+  .button-wrapper {
+    margin: 3px;
+    padding: 3px;
+    border-right: 1px solid #d0d0d0;
+  }
+  .icon-wrapper {
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #d0d0d0;
+  }
+
+  :last-child {
+    border-right: none;
+  }
+}
+
+#logo-header {
+  margin: 0;
+  font-family: "Cinzel Decorative", serif;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.material-icons {
+  font-size: 30px;
+  color: $color-dark-grey;
+  cursor: pointer;
+}
+
+.button-wrapper {
+  button {
+    color: $color-dark-grey;
+    font-size: 18px;
+    font-family: "Segoe UI";
+  }
+}
+
+.username-title {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  margin: 0 !important;
+  font-size: 30px;
+  color: #5D5D5D;
+  font-family: "Segoe UI Light", serif;
+  border-right: 1px solid #d0d0d0;
+
+}

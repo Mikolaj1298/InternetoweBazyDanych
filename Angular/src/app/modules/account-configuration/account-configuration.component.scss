@@ -1,0 +1,22 @@
+@import "../../../styles/colors";
+
+.theme-container {
+  height: calc(100% - 62px);
+  background-image: url("../../../assets/images/pexels-pixabay-workshop.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1);
+}
+
+.blend-wrapper {
+  height: calc(100vh - 62px);
+
+  background-color: rgba(5, 5, 5, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+

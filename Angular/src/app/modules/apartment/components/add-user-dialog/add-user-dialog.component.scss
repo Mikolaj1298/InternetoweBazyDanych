@@ -1,0 +1,109 @@
+@import "../../../../../styles/colors";
+@import "src/app/modules/home/pages/home-main/home-main.component";
+
+mat-card {
+  background-color: $color-dark-grey;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  padding: 10px 16px;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(100% - 12px);
+
+  mat-icon {
+    color: white;
+    cursor: pointer;
+  }
+
+  mat-icon:hover {
+    color: black;
+  }
+}
+
+.cont {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  margin-top: -25px !important;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  background-color: $color-dark-grey;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(52, 74, 83, 0.4);
+}
+
+.body {
+  background-color: white;
+  //margin-top: 15px;
+  width: 97%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+}
+
+.vertical-list-content-item {
+  height: 35px !important;
+
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+.vertical-list-content-users :hover {
+  cursor: pointer;
+  background-color: #cdcdcd;
+}
+
+.search-input-wrapper {
+  width: 100%;
+  //border-bottom: 2px solid rgba(93, 93, 93, 0.8);
+}
+
+.search-input {
+  width: 100%;
+}
+
+.submit-button {
+  width: 20%;
+  height: 45px;
+  margin: 25px 0;
+  color: white;
+  font-size: 22px;
+}
+
+.red-button {
+  background-color: $color-red;
+}
+
+.yellow-button {
+  background-color: goldenrod;
+  width: 100px !important;
+}
+
+.options-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .buttons-wrapper {
+    :last-child {
+      margin-left: 5px;
+    }
+  }
+}
+
+.chosen-item {
+  background-color: #cdcdcd;
+}
+
+//::ng-deep .mat-form-field-label, .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+//  display: flex !important;
+//  justify-content: center !important;
+//}
